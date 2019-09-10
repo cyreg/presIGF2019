@@ -1,0 +1,161 @@
+% \documentclass[10pt]{beamer}
+% \usetheme{Berkeley}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\documentclass[xcolor=dvipsnames,hyperref={breaklinks=true},mathserif,
+professionalfont,12pt]{beamer} 
+%\usecolortheme[named=RoyalBlue]{structure} 
+\useoutertheme{infolines} 
+\usetheme[]{Pittsburgh} 
+\setbeamertemplate{items}[ball] 
+\setbeamertemplate{blocks}[rounded][shadow=true]
+\setbeamertemplate{navigationsymbols}{}
+\usefonttheme{serif}
+\usefonttheme{professionalfonts}
+\setbeamerfont{frametitle}{size=\normalsize}
+\setbeamerfont{text}{size=\small}
+\author{Cyrille Reggio}
+%
+%\usepackage{amsmath,amssymb,amsthm,amssymb}
+%\usepackage{mathtools}
+%\usepackage{bb
+%\usepackage{graphicx}
+%\usepackage{float}
+%\usepackage{ucs}
+%\usepackage{txfonts}
+%\usepackage{subfigure}
+%\usepackage{color}
+%\usepackage{xcolor}
+%\usepackage{listings}
+%\usepackage{time}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setbeamertemplate{items}[ball] 
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{soul}
+\usepackage{tabu}
+%\usetheme{default}
+\usepackage{makeidx} %obligé dans beamer
+\usepackage{float}
+\usepackage{mathtools}
+\usepackage{wrapfig}
+\usepackage{ragged2e}
+\usepackage{gensymb} 
+\usepackage{fancyhdr}
+\usepackage{natbib}
+\usepackage[export]{adjustbox}
+
+\usepackage{pdfpages}
+\usepackage{supertabular}
+
+\usepackage{array}
+\usepackage{url}
+%\usepackage{enumitem} Sinon les points disparaissent des itemize !!!
+\usepackage{subcaption}
+\usepackage{caption}
+%\captionsetup{justification=raggedright,singlelinecheck = false}
+\usepackage{multicol}
+\usepackage{newcent}
+\usepackage{environ}
+\usepackage{emptypage}
+
+\logo{\includegraphics[scale=0.15]{img/enteteENSM.png}} 
+\usepackage{makeidx} 
+\makeindex
+%%%%%%%%%%%%ndex%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\NewEnviron{myequation}{%
+\begin{equation}
+\scalebox{1.5}{$\BODY$}
+\end{equation}
+}
+\newenvironment{conditions}
+  {\par\vspace{\abovedisplayskip}\noindent\begin{tabular}{>{$}l<{$} @{${}={}$} 
+l}}
+  {\end{tabular}\par\vspace{\belowdisplayskip}}
+
+
+\begin{document}
+
+    
+    \begin{frame}{Sommaire}
+        \tableofcontents
+    \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \section{Propriétés physiques et chimiques}
+\begin{frame}{Rappels}
+ \begin{itemize}
+  \item methane -163
+  \item ethane
+  \item ...
+ \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\centering
+
+\large
+ $\frac{P.V}{T}=Cste$
+\end{frame}
+
+\begin{frame}
+ Si V est constant et que la pression augmente ?\\
+ \pause La température augmente
+\end{frame}
+
+%TODO Chercher image
+\begin{frame}
+ Si T est constante et que la pression augmente ?\\
+ \pause Le volume diminue
+\end{frame}
+
+\begin{frame}
+    \includegraphics{}
+\end{frame}
+
+\begin{frame}
+ Si P est constante et que le volume augmente ?\\
+ \pause La pression diminue
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Spécificité du methane comme combustible}
+
+\begin{frame}
+ 
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Liquéfaction méthane}
+
+\begin{frame}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Circuits Gas as Fuel}
+
+%%%%%%%%%%%%%%%%
+\subsection{Type A}
+\begin{frame}
+ 
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%
+\subsection{Type C}
+
+\begin{frame}
+ 
+\end{frame}
+
+\end{document}
+

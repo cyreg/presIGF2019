@@ -1,0 +1,283 @@
+                           Dual-Fuel Diesel Electric
+                              simulator type C
+                                                                            Cyrille Reggio 2018
+1 Vessel data sheet
+Dead load capacity                                             55,000 dwt
+Length                                                               218 m
+Width                                                               31,8 m
+Maximum speed                                                         23 kt
+Propulsive power                                                21000 kW
+Electric propulsion motors                                                2
+DA                                     4 x Wärtsilä 8L50DF (4 x 7,600 kW)
+   Main bus bar voltage                                                                  6.6kV
+   Main bar                                                                            4x400V
+   Bow thrusters                                                                             2
+   Stern thruster                                                                            1
+  TABLE 1 : Main Features
+      Dual Fuel Engines
+      Wartsila 8L50DF
+[200B?] - 7600 kW
+[200B?] - bore 500 mm
+[200B?] - 8 cylinders in line
+[200B?] - an air cooler
+[200B?] - Two turbo-souf[FB02 ?]antes
+[200B?] - 500 rpm
+[200B?] - gas mode / DO-HFO / backup (without pilot injection)
+  2 Systems addressed
+                            The systems represented by the DFDE simulator are as follows :
+[200B?]
+    [200B?] - IAS (Integrated Automation System) control system
+    [200B?] - Alarm management,
+    [200B?] - Electrical power management,
+    [200B?] - Propulsion system.
+    [200B?] - GE Dual Fuel management,
+    [200B?] - LNG Operations Control System (Control System)
+    [200B?] - LNG refuelling (truck, barge or pipe),
+    [200B?] - Monitoring of operations,
+    [200B?] - Gas quality,
+    [200B?] - ESD system,
+    [200B?] - LNG Storage
+[200B?] - Gas operations before supplying the groups.
+  3 Start-up
+       1 Load the DEDF42-CF program,
+       2 Load the initial cold ship condition,
+  Start the simulation with F1 then Home, the most common keyboard shortcuts are :
+   Shortcut       Function
+   F1             Run
+   F2             Freeze
+   F3             Stop
+   Shift+F6       Initial condition
+   Home           Main page
+   Pg Up          Increase the page
+   Pg Down        Decrease the page
+   F12            Ack buzzer
+  TABLE 2 : Keyboard shortcuts
+      Note that these shortcuts are also accessible via Menu Operation
+  4 Cold ship start sequence
+  4.1 Overall process
+   Stage    Action                                                                      Page
+            Line up for MDO from MDO Service tank to DGs via the Emergency Fuel
+      1     Feed Pump                                                                   (MD455 & 460)
+      2     Line up DG LO system                                                        (md 305 & 310)
+      3     Line up DG cooling water system                                             (MD405-410)
+            Start DG from local stand and connect it to main switchboard Note ! Connect (MD205-220)    and
+      4     electrical consumers to main switchboard to achive heating from DGs.        MD105
+      6     Line up for normal fuel supply                                              (MD460)
+      7     Prepare ventilation
+      8     Prepare LNG supplier for bunkering (truck, ship or terminal) (MD480)
+      9     Prepare vessel for bunkering                                                (MD510 & 755)
+     10     Line up for heating of LNG                                                  (MD515)
+     11     Prepare Gas Supply to DGs
+     12     DO/HFO-Gas Change Over
+            Line up and start up next Diesel Engine, start on Gas and connect to main
+     13     switch board
+     14     Prepare for start up of propulsion from engine control room
+     15     Transfer control position to bridge
+     16     Ready for Departure
+  TABLE 3 : Main steps
+  4.2 Procurement
+  4.2.1 Equipment
+      The vessel is equipped with two type C tanks for a total capacity of 400m3. The two tanks are maintained at
+  5 bar at a temperature of -127◦C. The ship is equipped with two nitrogen tanks for inerting, in particular of the
+  supply pipes, but also for pressurising the FWHT expansion box, the system is pressurised to 8bar.
+      FIGURE 1 : LNG Bunkering System
+      Each tank is equipped with a spray line that will allow :
+[200B?]    Refrigeration of the tank by vaporizing droplets during a cooling procedure,
+[200B?]    Tank pressure management during the supply operation,
+  The steam return lines and liquid lines are designed to be able to be in-terconnected.
+      4.3 LNG supply
+      The pressure delivered to the GVU during operation is 6.3barp to deliver the gas to
+      2.3bar in the engine intake pipe, at a temperature of 34.1◦C.
+      FIGURE 2 : LNG pac
+  4.4 Evaporators
+  4.4.1 Pressure Build Up Evaporator
+      The Pressure Build Up Evaporator allows the tank to be pressurized to 5.3bar, the gas is vaporized by the BT
+  fresh water circuit (LT FW ) through a silicone gel (Syltherm) that acts as an interface between the ED and the
+  gas. The pressure is applied :
+[200B?]    After the Initial Build Up operation,
+[200B?]    in operation a[FB01 ?]n to prevent the pressure drop in the vessel caused by the
+  gas consumption, the steam produced returns to the tank.
+  4.4.2 Main Gas Evaporator
+      The Main Gas Evaporator is used to manage the gas pressure delivered to the engine. It takes the gas in liquid
+  phase and vaporizes it. The pressure is regulated by regulating valves before and after the evaporators.
+  4.4.3 Gas Heater
+      The Gas Heater provides the [FB01 ?]nalisation temperature and pressure control for the engine. It has an
+  independent ED circuit to manage the [FB01 ?]nale phase of the heating system. The discharge pressure of the
+  evaporators (PBE, GVE) is regulated by the valve (V96) which redirects part of the flow to the Gas Heater. During
+  free operation, the set point of this valve is 40%.
+      Note : the expansion tank has a nitrogen supply a[FB01 ?]n to maintain the tank pressure. It is also equipped
+  with a gas detection system ;
+  4.5 Safety valves
+      The safety valves are located at different points in the circuit, their set pressure is 9bar. Their discharge is
+  carried out at the degassing mast.
+  5 Shutdown
+      Several shutdown situations are planned :
+[200B?]
+[200B?] TAS (Tank Shutdown) :
+[200B?] In case of failure of the LNG PAC circuit, the vents open a[FB01 ?]n to depressurize the pipework and
+          the closed automatic valves. A liquid phase gas return system sequenced to the tank ensures that only the
+          minimum amount of gas is vaporized.
+[200B?] CB (Close Bunkering) :
+[200B?] During the [FB01 ?]n supply operation, by closing the bunkering valves or in case of high level or high pressure
+          in the tank,
+[200B?] BS (Bunkering Shutdown) :
+[200B?] Supply valves if closed manually during operation cause a shutdown.
+[200B?] ELS (Engine Line Shutdown) : In the event of an incident on the gas supply circuit, the inlet and outlet
+          valves at the MGE, and the interconnection valve are closed, the shutdown signal is sent to the GVU.
+  5.1 Gas and ESD detection
+      The detection is based on the detection of gas and oxygen. A pre-alarm and an alarm whose threshold can be
+  con[FB01 ?]guré in the Gas Detector Panel.
+  6 Control System (LNG Monitor)
+      The control system largely automates the procedures related to the gas circuit and allows the control and
+  monitoring of operations.
+  6.0.1 Control Box Command
+      It allows operations on the fuel to be carried out and their progress to be monitored.
+      FIGURE 4 : Disposition Storage tank
+      The tables below illustrate each sequence automatically of the different elements of the circuit.
+                                                             I
+                                    Diesel Alternator starting procedure Power supply
+      Prerequisites The following circuits must be arranged : (Valves open, auxiliary pumps started)
+       1 EDBT
+       2 Oil
+       3 DO (the DO emergency pump runs on Emergency Fuel Feed Pump compressed air)
+  Note : Compressed air is always available. Before starting a group, it is necessary to switch it to DO/HFO mode,
+  be aware that in back-up mode (by default) it is impossible to switch to gas mode without stopping it.
+      Start-up :
+       1 Open the flap ([FB02 ?]ap),
+       2 Make an electric turn and then disengage the turning gear,
+       3 Make a Blow turn,
+       4 Go back to local,
+       5 Acknowledge alarms,
+       6 Switch to run mode on the selector switch,
+       7 Start and observe the temperature rise of the exhausts,
+       8 If the settings are correct, switch the group to remote.
+  We can then arrange the power supply on the main bars and disposal of the consumers.
+       1 Connect the main circuit breaker,
+       2 Supply the complete busbar system,
+  14. Feed consumers. It is now possible to arrange the main and auxiliary pumps of the ED and oil circuits in
+  automatic mode.
+      Pass the DG1 in priority 1 / auto / alone on bus Stop the MDO air pump.
+      Attention :
+      The ED temperature regulation can only be switched automatically on the IAS. It is necessary :
+[200B?] - Pass the three-way remote control valves through the circuit,
+[200B?] - Then on the IAS in the FW Cooling System page, pass the corresponding valves
+  in a car. The valve then turns orange to indicate that it is regulating.
+                                                            II
+                               Procedure for supplying GNLC tanks at room temperature
+      In this example we will use the truck and the supply will be made on the port tank. The following steps must
+  be followed :
+      Truck side preparations
+      A leak test of the liquid and vapour line valves must be carried out.
+       1 Inert the liquid and vapour lines,
+       2 Stop the inerting and check the absence of leaks,
+       3 Put the lines in the air,
+       4 Close the valves of the liquid and steam lines.
+  When the ship is ready (full seal removed), connect the loading arm. Warn the board that an ESD test must be
+  conducted.
+      Note that the edge can inert the truck and the truck can inert the edge.
+      Edge preparations
+      Operations will be conducted from the "LNG Monitor System" page.
+      Inertage
+       1 Open the flange on the ship side and connect the [FB02 ?]exible of the truck,
+       2 Installation of the water curtain,
+    [200B?] 3. Inerting with nitrogen, during this operation, the Inert command must be sent twice for :
+    [200B?] (a) Depressurize
+    [200B?] (b) Inerting
+  In inerting operations, be careful not to "activate" !
+      The operations will be carried out in "automatic" mode, select "All in auto". Inerting is conducted from the
+  tank to the connection.
+[200B?] - Bottom Connection (BC) Inerting
+[200B?] - Inertage of Liquid Interconnection Line (LIL)
+[200B?] - Inertage of the Port Liquid Bunker Line (LBL)
+      1 Open (activate) Bottom Connection 1 (V20),
+      2 Open (activate) the Liquid Interconnection Line (select tank 1 / activate) (V01),
+      3 Open the Top Spray High Boom (LIL) (V02),
+      4 Activate the Liquid Bunker Line (V37),
+      5 Open the head valve (V57) manually
+      6 Activate and test the ESD (the LIL valve (V57) must close)
+                                                            III
+     A leak test (Leak Test) must now be performed on the loading flange, for this purpose :
+      1 Pressurize the line between the truck and the head valve (V57) with nitrogen (8 bar),
+      2 Open the nitrogen supply valve and the valve (V58 MD510),
+      3 Close the supply valve and véri[FB01 ?]er the absence of leakage (pressure at 8 bar),
+      4 vent through the vent (V10 MD510),
+      5 close the vent.
+  Cooling of tanks
+      1 Open the manual isolation valve (V56 MD510)
+      2 Control the steam cooling by the liquid line of the low-flow truck (5 m3/h), select VAPOUR then ON. The
+        temperature
+      3 Start of the control box (V57) by the LBL,
+      4 Cold descent to -60◦Cdu pipework and tank,
+      5 Opening of the liquid line and progressive rise up to 400m3/h,
+      6 Vaporization (spray) in auto (LIL), lower the pressure set point (Setpoint Bunke-ring) to 1.0bar, this has
+        the effect of keeping the tank as cold as possible by playing on the vaporization.
+  LNG supply begins
+                         If the back pressure increases in the tank, open the steam return line.
+     Finalization
+      1 at 85%, ask the truck to chase the liquid with steam (1 minute at 5 m3/h),
+      2 Stop the supply through the Control Box (Stop LBL) (V57),
+      3 Disable (V37) and purge the BL (V35, V36), for this purpose it is necessary to open on the spray of the
+        (LBL),
+      4 inert the liquid line (inert LBL) (V55, V36, V38) (2 times),
+      5 purge the LIL through the spray line (V55) and inerter (V05) (twice),
+      6 Disconnect the flange, supply operation completed.
+                                                            IV
+                                           Cold tank GNLC supply procedure
+     This procedure applies most of the time, in fact, if an LNG stub exists in the tank it is considered cold.
+      1 Establish the connection with the terminal, as soon as the connection is established, the ESD is connected,
+      2 Test the ESD, (V57)
+      3 Véri[FB01 ?]er the tightness of the connection,
+      4 Enable CB
+      5 Activate the LIL from the control box by activating : "tanks Activate",
+      6 from the LBL control box select "cool" then "activate" and en[FB01 ?]n "start"
+  The manual valves must be correctly positioned to allow the controlled valve to be opened.
+        1 Enable steam return (V03 and V51)
+        2 Open the barge or terminal side of the liquid and steam valve, wait until the pressure is 4.5bar,
+        3 Start the supply operation (from 50m3/h to 400m3/h)
+        4 At 85%, start reducing the liquid flow and ask the barge to open the vapor bunkering line a[FB01 ?]n to
+          pressurize the lines to push the liquid,
+        5 When there is no more liquid flow, wait 30sec to empty the lines and then stop the supply operation (STOP
+          and deactivate from the LBL control box),
+        6 Purge the LBL (drain),
+        7 Purge the LBL,
+        8 Inert LIL,
+  15. Inerter LBL, It is now necessary to disconnect the [FB02 ?]exible :
+        1 Inert the edge with nitrogen via the (V58),
+        2 When the nitrogen pressure reaches 8bar, purge the liquid line to the barge,
+        3 Close the valve (V58), open the vent of the liquid line of the barge,
+        4 When pressure is zero, close the vent to the barge,
+        5 Close the liquid part on the barge side.
+  A[FB01 ?]n not to send gas to the atmosphere when disconnecting, the HHT must be inert.
+[200B?] - Inform the barge of the opening of the HHT vent,
+[200B?] - Manually set the HHT,
+[200B?] - Close the steam return (V03),
+[200B?] - Open on nitrogen (V04) to inert towards the barge,
+[200B?] - When the inerting is complete, close the valves and return the HHT to auto,
+[200B?] - Disable and inert the HHT from the control box,
+[200B?] - purges the HHT to the barge and when the pressure is zero, stop and isolate the inerting,
+[200B?] - When the [FB02 ?]exible is depressurized, close the manual supply valve (V56),
+[200B?] - Disconnect the [FB02 ?]exible and place the full flange,
+[200B?] - Purge the line by opening the valve (V56) and (V58) several times
+[200B?] - Inert by opening the valve (V10)
+[200B?]
+  End of the procurement operation.
+                                                             V
+                                              Conversion from engines to gas
+      LNG provision
+      The heating system for the evaporators must be installed ;
+        1 Véri[FB01 ?]er the level of the expansion box and place the expansion valve 1.5 bar of nitrogen,
+        2 Arrange the water circuit, regulation in automatic,
+        3 Arrange the HVAC air conditioning,
+  4. Start the pumps. Arrangement of the gas supply to the engines.
+        1 Activate the CB, if it has been depressurized, it must first be inerted,
+        2 Activate the Pressure Build Evaporator the pressure set point must be 5bar,
+        3 Activate the Engine Line,
+        4 When the tank pressure is correct, activate the Main Gas Evaporator, the inerter
+  if necessary, the Gas Interconnection Line connection can be activated, but you must nevertheless :
+      - Have an MGE in service,
+      - Have the other MGE stopped but pressurized. The gas is arranged.
+      Conversion from engines to gas
+        1 The engine compartment ventilation must be started and then switched to auto
+        2 The manual supply valve for the GVU (V051) must be installed,
+        3 The GVU control in auto,
+  4. The Mode gas is available. It is possible to start directly with gas.

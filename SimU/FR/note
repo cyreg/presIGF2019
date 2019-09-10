@@ -1,0 +1,221 @@
+8.2.6
+ Diesel Generator Start Inhibit
+The diesel generator start inhibit system is implemented in both the software of 
+the Engine Control System and the software of the IAS. The
+diesel generator start inhibiting is monitored and displayed in the diesel 
+generator status process image. A start inhibit condition is indicated
+on the power management process image by the text INHIBIT START.
+The following conditions will result in a diesel generator start inhibit:
+• Engine not pre-lubricated (ECS)
+• Turning gear engaged (ECS)
+• Stop lever in stop position (ECS)
+• Engine still running (ECS)
+• External start blocking (ECS)
+• Active shutdown (includes the emergency stop button) (ECS))
+• Local/remote selector switch in local position (ECS/IAS)
+
+8.2.7
+ Diesel Generator stop Inhibit
+The diesel generator stop inhibit system is implemented in both the software of 
+the ECS and the software of the IAS. The diesel generator stop
+inhibiting is monitored and displayed in the diesel generator status process 
+image. A stop inhibit condition is indicated on the power
+management process image by the text INHIBIT STOP.
+The following conditions will result in a diesel generator stop inhibit:
+• Local/remote selector switch is in the local position (ECS/IAS)
+• The calculated load set point on the remaining diesel generators is greater 
+than 100% (PMS)
+
+8.2.8
+ Diesel Generator Connect Inhibit
+The diesel generator connect inhibit is implemented in both the software of the 
+generator protection unit in the main switchboard and the
+software of the IAS. The diesel generator connect inhibiting is monitored and 
+displayed in the diesel generator status process image. A
+connect inhibit condition is indicated on the power management process image by 
+the text INHIBIT CONNECT.
+The following conditions will result in a diesel generator connect inhibit:
+• Common fault / breaker alarm present (SWBD / IAS)
+• Local/remote selector switch in local position (SWBD/IAS)
+• Generator breaker tripped (SWBD / IAS)
+• Diesel generator start blocked (and not running) (IAS)
+
+8.2.9
+ Diesel Generator Disconnect Inhibit
+The diesel generator disconnect inhibiting is implemented in both the software 
+of the generator protection unit at the 6.6kV main switchboard
+and the software of the IAS. The diesel generator disconnect inhibiting 
+conditions will be monitored and displayed in the diesel generator
+status process image. A disconnect inhibit condition is indicated on the power 
+management process image by the text INHIBIT
+DISCONNECT.
+The following conditions will result in a diesel generator disconnect inhibit:
+• Local/remote selector switch is in the local position (SWBD / IAS)
+• The calculated load set point on the remaining diesel generators is greater 
+than 100% (IAS)
+
+8.2.10 Diesel Generator Connect
+The diesel generator can be connected to the 400V main switchboard as a result 
+of the following:
+• Manually initiated connect command
+• Standby start initiated by the switchboard control system, as a result of:
+-Load dependant start Heavy consumer start
+-Blackout detection
+-Alarm on a running & connected diesel generator
+
+8.2.11 Diesel Generator Disconnect
+The diesel generator can be disconnected from the 400V main switchboard as a 
+result of the following:
+• Manually initiated disconnect command
+• Standby stop initiated by the IAS, as a result of: Load dependant stop
+
+8.2.12 Diesel Generator disconnect When in Compensated droop load sharing mode
+The diesel generator is disconnected via the DG DISCONNECT output in the IAS. A 
+load reduction sequence will be initiated in the software
+of the IAS. This will result in the load set point to the disconnecting diesel 
+generator being set to 0kW.
+
+8.2.13 Diesel Generator disconnect When in Isochronous load sharing mode
+AS Compensated Droop, but instead of output control signals from the IAS, the 
+electronic speed governor is controlling the load reduction.
+
+8.2.14 Diesel Generator Safety Stop
+The diesel generator safety stop function is implemented in the software of the 
+ECS. The diesel generator safety stop conditions will be
+monitored and displayed in the diesel generator status field. A safety stop 
+condition is indicated on the power management process image by
+the text SHUTDOWN and INTERNAL BLOCKED.
+A diesel generator safety stop will activate an additional diesel generator 
+request to the main switchboard control system.
+The safety stop can be initiated as a result of the following conditions:
+• Low-low lubricating oil pressure, inlet (ECS)
+• High-high HT water temperature, outlet (ECS)
+• Oil mist detector shutdown (ECS)
+• Engine over-speed (ECS)
+
+8.2.15 Load Dependant Start and Stop
+The power management system will always ensure that the correct number of 
+generators is connected for the actual electric power demand.
+To enable load dependent start and stop, the load dependent start and stop 
+functions must be switched on and sufficient generators set to
+standby. The load dependent start and stop function is based on the percentage 
+load of the connected generators. For load dependent start, a
+set of values with different time delays are defined. A load dependent stop is 
+initiated if the load on the remaining generators after stop will be
+less than the specified value.
+The following table shows the initial parameters for the load dependent start 
+and stop function:
+
+
+No. of Gen’s Connected & Start Limit 1 & Delay Time & Stop Limit & Delay Time
+1 & 85% & 30s & &
+2 & 85% & 30s & 35% & 10 min
+3 & 85% & 30s & 45% & 10 min
+
+8.2.16 Load sharing
+The diesel generators speed governors can operate in two modes; isochronous and 
+droop mode. A selector switch is located on each 400kV
+main switchboard generator panel and a software button is available on the IAS 
+power management screen enabling the selection of either
+droop or isochronous load sharing mode.
+
+8.2.17 Isochronous Load Sharing Mode
+In isochronous load sharing mode the network frequency will be maintained at 
+60Hz and the diesel generators load output will be shared
+equally by means of the governor inbuilt isochronous load sharing control and 
+the load sharing lines between the electronic speed governors.
+The load control and frequency adjustment and hence the different operation 
+modes within the IAS PMS will be disabled.
+
+8.2.18 Droop Load Sharing Mode
+When the speed governors are in droop load sharing mode and the generators are 
+connected to the switchboard, the PMS controls the active
+(kW) load sharing over the speed governor. The engine speed is controlled via 
+the DG INCREASE SPEED and the DG DECREASE SPEED
+outputs in the IAS.
+
+8.2.19 Bus Tie Breaker Control
+The 400V main switchboard bus tie breaker will be connect inhibited as a result 
+of the following conditions:
+• LOCAL/REMOTE selector switch is in the LOCAL position (connect attempt from 
+IAS)
+• No dead bus is detected on either switchboard
+The 400V main switchboard bus tie breaker will be disconnect inhibited as a 
+result of the following conditions:
+• LOCAL/REMOTE selector switch is in the LOCAL position (disconnect attempt from 
+IAS)
+The 400V main switchboard bus tie breaker and can be connected as a result of 
+the following:
+• Manual activation
+The 400V main switchboard bus tie breaker can be disconnected as a result of the 
+following:
+• Manual activation
+
+8.2.20 Blackout Precautionary Measures via the PMS
+The power management system (PMS) is equipped with the blackout precautionary 
+measures as follows:
+• Power limitation / load reduction by the PMS. This includes:
+- Limitation of consumers load increase based on the available capacity
+- Load reduction based on the average bus load
+- Load reduction based on the individual generator load
+- Load reduction based on the bus frequency
+- Shedding of selected consumers
+• Heavy consumer start
+- If a heavy consumer (HC) shall be started a “Start Request” signal is sent to 
+the PMS.
+- If power is available “Start Granted” will be activated from the PMS.
+- If the power available is too low, the stand by DG will be started and 
+connected to the main switch board before “start granted” is activated.
+
+PMS Module :
+
+page 1
+PMS shows the following status: The DG no 2 is in St-By and will be
+the 1st to start (priority 2). Apparently, 1 generator is already online.
+In the PMS ID, it also mentioned what BT is controlled by
+The DG Auto (PMS) control and can be controlled remotely from the
+Operator station in the ECR.
+Modes: Semi or Auto
+GS: When selected, the PMS module is controlled remotely from the
+Graphic Station (GS) in the ECR.
+Generator Breaker: Manual (semi) control of breaker
+Generator: Manual control (start/stop) of DG
+Bustie Breaker: Manual control of Bustie breaker
+Priority: From this field the St.By number of the generator is set.
+Alarm: Any alarm connected to the PMS can be reset by this button
+
+Page 2
+Load Dependant Stop: Depending on Operation mode and company
+policy, it may be required to turn off the LD Stop functionality.
+Droop/Isochronous: For the Diesel Generator, load sharing mode can
+be selected whenever desired.
+The AGS (Advanced Generator Supervisor) can be selected whenever
+desired. Ref. to separate functional description.
+
+Page 3
+Even though it’s not recommended, the settings can be changed for
+testing purposes.
+Note! The st.by start limits and stop request limits can not be changed
+from this window. However, common PMS settings are available
+from the Variable List.
+
+
+8.2.22 Advanced Generator Supervisor
+The Advanced Generator Supervisor (AGS) is monitoring the performance of 
+essential equipment, such as speed governor and AVR and will
+give alarm if limits are exceeded and carry out black-out preventive actions if 
+necessary.
+
+The AGS functionality included:
+1.) The following prime mover malfunctions will cause that the diesel generator 
+is not performing as required: Governor failure, dirty fuel
+filter and actuator faults/fuel rack stuck.
+AGS will act upon the alarm(s) accordingly such as stand by start and trip of 
+faulty generator. Speed/load share control change to droop mode.
+See also table for details.
+2.) The following AVR malfunctions will cause that the generator is not 
+performing as required: Over excitation (loss of voltage feedback to
+AVR) and under excitation (internal failure in the AVR)
+AGS will act upon the alarm(s) accordingly such as stand by start and trip of 
+faulty generator. Speed/load share control change to droop mode.
+See also table for details.
